@@ -1,8 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Navlink from '../buttons/Navlink';
+import { LuShoppingCart } from "react-icons/lu";
 
 const Navbar = () => {
+
+    const nav = <>
+        <li><Navlink href={"/"}>Home</Navlink></li>
+        <li><Navlink href={"/products"}>Products</Navlink></li>
+        <li><Navlink href={"/about"}>About</Navlink></li>
+        <li><Navlink href={"/blog"}>Blog</Navlink></li>
+    </>
+
     return (
         <>
             <div className='bg-base-100 shadow-sm'>
@@ -16,7 +26,9 @@ const Navbar = () => {
                                     </svg>
                                 </div>
                                 <div tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                    menu-items
+                                    <ul>
+                                        {nav}
+                                    </ul>
                                 </div>
                             </div>
                             <div>
@@ -24,10 +36,15 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className="navbar-center hidden lg:flex">
-                            menu-items
+                            <ul className='flex items-center gap-5'>
+                                {nav}
+                            </ul>
                         </div>
                         <div className="navbar-end">
-                            <a className="">Button</a>
+                            <div className='space-x-3'>
+                                <Link href={"/cart"} className='btn btn-primary btn-outline'><LuShoppingCart /></Link>
+                                <Link href={"/login"} className='btn btn-primary'>Login</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
