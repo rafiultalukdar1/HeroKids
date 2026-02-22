@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import React from "react";
 
 const ProductCard = ({ product }) => {
@@ -10,12 +10,7 @@ const ProductCard = ({ product }) => {
     <div className="card bg-base-100 shadow-md hover:shadow-xl transition">
       
       <figure className="relative h-[220px]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-contain p-4"
-        />
+        <img src={image} alt="" />
       </figure>
 
       <div className="card-body space-y-2">
@@ -38,8 +33,11 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="card-actions">
-          <button className="btn btn-primary btn-sm w-full">
+          <button className="btn btn-primary btn-outline btn-sm w-full">
             Add to Cart
+          </button>
+          <button className="btn btn-primary btn-sm w-full mt-2">
+            View Details
           </button>
         </div>
       </div>
